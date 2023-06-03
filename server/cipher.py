@@ -93,6 +93,5 @@ BASE_TEXT = [
     "Amidst this enchanting ambiance, a feeling of harmony filled the heart."
 ]
 
-
 def rand(row):
     return random.choice(NumToEmoj[row])

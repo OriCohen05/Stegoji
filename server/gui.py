@@ -1,6 +1,6 @@
 import PySimpleGUI as sg
-import hide as enc
-import data as dec
+import server.hide as enc
+import server.data as dec
 
 sg.theme('#DarkTeal4')
 right_click_menu = ['', ['Copy', 'Paste', 'Select All', 'Cut']]

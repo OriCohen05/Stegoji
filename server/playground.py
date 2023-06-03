@@ -3,6 +3,8 @@ import random
 # Set the encoding to UTF-8
 sys.stdout.reconfigure(encoding='utf-8')
 
+
+
 NumToEmoj = {
     1: "\U0001F600", 2: "\U0001F603", 3: "\U0001F604", 4: "\U0001F601", 5: "\U0001F606",
     6: "\U0001F605", 7: "\U0001F923", 8: "\U0001F602", 9: "\U0001F642", 10: "\U0001F643",
