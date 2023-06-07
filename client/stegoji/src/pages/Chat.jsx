@@ -45,13 +45,6 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function Chat() {
     const classes = useStyles();
-    const { promiseInProgress } = usePromiseTracker();
-    const json = {iam : "straightasf"}
-    useEffect(() => {
-        httpService.post('', JSON.stringify(json))
-          .then((value) => console.log(value))
-          .catch((error) => console.error('Error:', error));
-      }, []);
     return (
       <div className={classes.container}>
         <Paper className={classes.paper} zDepth={2}>
@@ -67,7 +60,7 @@ export default function Chat() {
               message="Cant come today I am working on my chat "
               timestamp="MM/DD 00:00"
               photoURL="https://lh3.googleusercontent.com/a-/AOh14Gi4vkKYlfrbJ0QLJTg_DLjcYyyK7fYoWRpz2r4s=s96-c"
-              displayName="まさりぶ"
+              displayName="Ori"
               avatarDisp={true}
             />
             <MessageLeft
