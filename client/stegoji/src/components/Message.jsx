@@ -1,4 +1,6 @@
+
 import React from "react";
+import { useSelector } from 'react-redux';
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import { deepOrange } from "@material-ui/core/colors";
@@ -116,7 +118,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 
 export const MessageLeft = (props) => {
-  const message = props.message ? props.message : "no message";
+  const message = props.message ? props.message : "";
   const timestamp = props.timestamp ? props.timestamp : "";
   const photoURL = props.photoURL ? props.photoURL : "dummy.js";
   const displayName = props.displayName ? props.displayName : "Ori";
@@ -144,7 +146,7 @@ export const MessageLeft = (props) => {
 };
 export const MessageRight = (props) => {
   const classes = useStyles();
-  const message = props.message ? props.message : "no message";
+  const message = props.message ? props.message : "";
   const timestamp = props.timestamp ? props.timestamp : "";
   return (
     <div className={classes.messageRowRight}>
