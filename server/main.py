@@ -4,6 +4,7 @@ from fastapi import FastAPI, Body, HTTPException
 from fastapi.security import HTTPBasic, HTTPBasicCredentials, OAuth2PasswordRequestForm
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.param_functions import Query
 from pydantic import BaseModel
 from uuid import uuid4
 from encryption.emoji_algorithm import encrypt, decrypt
@@ -30,9 +31,18 @@ class Request(BaseModel):
 
 @app.post("/")
 async def post(request: Request = Body(..., embed=True)):
-    return {"message": f"{encrypt(request.message[0])}"}
+    return {"message": f"{encrypt(request.message)}"}
 
-
+@app.get('/api/decrypt')
+async def decrypt_api(data: str = Query(...), key: str = Query(...)):
+    if data and key:
+        decrypted_data = decrypt(data, key)
+        return {
+            'mode': 'dec',
+            'input': data,
+            'output': decrypted_data,
+            'key': ''
+        }
 
 
 # User model
